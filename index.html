@@ -5,115 +5,221 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="ADAS Pedestrian Orientation Dataset - Multi-orientation pedestrian detection for ADAS systems" />
-    <title>ADAS Pedestrian Orientation Dataset</title>
+        content="SafeRoad Dataset - Multi-orientation pedestrian detection for ADAS systems" />
+    <title>SafeRoad Dataset</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
     <link rel="icon" href="assets/img/backg.jpg" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <!-- ====== Header ====== -->
-    <header>
-        <div class="container d-flex justify-content-between align-items-center">
-            <!-- Titre / Logo -->
-            <h1 class="site-title">SAFE ROAD Dataset</h1>
-            <!-- Navbar -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="logo">SafeRoad Dataset</a>
             <nav class="navbar">
                 <ul class="nav-list">
                     <li><a class="active" href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#download">Download</a></li>
-                    <li><a href="#cite">Cite Us</a></li>
+                    <li><a href="#cite">Citation</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
-
     </header>
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Multi-orientation Pedestrian Detection and Classification Dataset for Moroccan Road Safety
-            </h2>
-        </div>
-    </section>
-    <section id="about" class="about-section">
-        <p>
-            This dataset is designed for advanced driver-assistance systems (ADAS).
-            The dataset was collected from different Moroccan cities and focuses on detection and classification tasks
-            of
-            pedestrians in eight walking directions:
-            <strong>Front</strong>, <strong>Back</strong>, <strong>Left</strong>, <strong>Right</strong>,
-            <strong>Left-Front</strong>, <strong>Left-Back</strong>,
-            <strong>Right-Front</strong>, and <strong>Right-Back</strong>,
-            using an industrial camera with a resolution of
-            <strong>2.3 megapixels</strong> and
-            <strong>60 frames per second</strong>, on board a moving vehicle. The data set will help you to train and
-            evaluate your state-of-the-art models with various annotations format (Txt format and COCO json files).
-        </p>
 
-        <div class="buttons">
-            <a href="dataset.html" class="btn-primary">Download Dataset</a>
-            <a href="paper.html" target="_blank" class="btn-secondary">Read Paper</a>
-        </div>
-    </section>
-    <section id="download" class="hero2">
-        <div class="hero-content2">
-            <h2>DOWNLOAD DATASET</h2>
-            <!-- Premier bloc -->
-            <div class="sub-block">
-                <h3>Videos</h3>
-                <p>
-                    Get MP4 files<strong>(5Go)</strong>
+    <main>
+
+        <!-- ====== Hero ====== -->
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-badge">Dataset</div>
+                <h1 class="hero-title">SafeRoad Dataset</h1>
+                <p class="hero-subtitle">
+                    Multi-orientation Pedestrian Detection and Classification for Moroccan Road Safety
                 </p>
-                <a href="https://github.com/zeineb07/ADAS_Dataset" class="third-btn">DOWNLOAD</a>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">Download Dataset</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
             </div>
-            <div class="sub-block1">
-                <h3>Annotations</h3>
-                <p>
-                    Annotations are hosted in our GitHub
+        </section>
+
+        <!-- ====== Stats Bar ====== -->
+        <div class="stats-bar">
+            <div class="container stats-inner">
+                <div class="stat">
+                    <span class="stat-value">8</span>
+                    <span class="stat-label">Orientation Classes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">2.3 MP</span>
+                    <span class="stat-label">Camera Resolution</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">60 FPS</span>
+                    <span class="stat-label">Frame Rate</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">COCO + TXT</span>
+                    <span class="stat-label">Annotation Formats</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== About ====== -->
+        <section id="about" class="section">
+            <div class="container section-inner">
+                <h2 class="section-title">About the Dataset</h2>
+                <div class="section-rule"></div>
+                <p class="section-text">
+                    This dataset is designed for advanced driver-assistance systems (ADAS).
+                    It was collected from different Moroccan cities and focuses on detection and classification of
+                    pedestrians in eight walking directions:
+                    <strong>Front</strong>, <strong>Back</strong>, <strong>Left</strong>, <strong>Right</strong>,
+                    <strong>Left-Front</strong>, <strong>Left-Back</strong>,
+                    <strong>Right-Front</strong>, and <strong>Right-Back</strong>.
+                    Data was captured using an industrial camera with a resolution of
+                    <strong>2.3 megapixels</strong> at <strong>60 frames per second</strong>, mounted on a moving vehicle.
+                    The dataset supports training and evaluating state-of-the-art models with multiple annotation formats
+                    (TXT and COCO JSON).
                 </p>
-                <a href="https://github.com/zeineb07/ADAS_Dataset" class="third-btn1">Go to GitHub</a>
+                <div class="about-actions">
+                    <a href="dataset.html" class="btn btn-primary">Download Dataset</a>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-    <section id="cite" class="hero3">
-        <div class="hero-content3">
-            <h1>Cite us</h1>
-            <p>
-                If you found our dataset useful in your research please consider citing our papers:
-            </p>
-            <p>
-                Safaa Dafrallah, Aouatif Amine, Stephane Mousset, Abdelaziz Bensrhair. Monocular Pedestrian Orientation
-                Recognition Based on Capsule Network for a Novel Collision Warning System. IEEE Access, 2021, 9,
-                pp.141635-141650. ⟨10.1109/ACCESS.2021.3119629⟩.
-            </p>
+        <!-- ====== Download ====== -->
+        <section id="download" class="section section-alt">
+            <div class="container section-inner">
+                <h2 class="section-title">Download</h2>
+                <div class="section-rule"></div>
+                <p class="section-text">
+                    The dataset is freely available for academic and non-commercial research purposes.
+                </p>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <div class="download-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+                        </div>
+                        <h3 class="download-card-title">Videos</h3>
+                        <p class="download-card-desc">MP4 video files captured from on-board camera across multiple Moroccan cities.</p>
+                        <div class="download-card-meta">
+                            <span class="download-card-size">~5 GB</span>
+                            <span class="download-card-format">MP4</span>
+                        </div>
+                        <a href="https://github.com/zeineb07/ADAS_Dataset" class="btn btn-primary" target="_blank" rel="noopener">Download</a>
+                    </div>
+                    <div class="download-card">
+                        <div class="download-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                        </div>
+                        <h3 class="download-card-title">Annotations</h3>
+                        <p class="download-card-desc">Ground-truth labels in TXT format and COCO JSON, covering all eight pedestrian orientation classes.</p>
+                        <div class="download-card-meta">
+                            <span class="download-card-format">TXT</span>
+                            <span class="download-card-format">COCO JSON</span>
+                        </div>
+                        <a href="https://github.com/zeineb07/ADAS_Dataset" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
-    </section>
-    <section id="contact" class="hero4">
-        <div class="hero-content4">
-            <h1>Contact us</h1>
-            <p>
-                If you have any questions about the dataset, reach out to: zeinebou.vallkheir@uit.ac.ma Or
-                dafrallah.safaa@uit.ac.ma Or aouatif.amine@uit.ac.ma
-            </p>
+        <!-- ====== Citation ====== -->
+        <section id="cite" class="section">
+            <div class="container section-inner">
+                <h2 class="section-title">Citation</h2>
+                <div class="section-rule"></div>
+                <p class="section-text">
+                    If you use this dataset in your research, please cite the following paper:
+                </p>
+                <div class="citation-block">
+                    <p>
+                        Safaa Dafrallah, Aouatif Amine, Stephane Mousset, Abdelaziz Bensrhair.
+                        <em>Monocular Pedestrian Orientation Recognition Based on Capsule Network for a Novel Collision Warning System.</em>
+                        IEEE Access, 2021, 9, pp.141635–141650.
+                        doi: <a href="https://doi.org/10.1109/ACCESS.2021.3119629" target="_blank" rel="noopener">10.1109/ACCESS.2021.3119629</a>
+                    </p>
+                </div>
+                <div class="bibtex-block">
+                    <div class="bibtex-header">
+                        <span>BibTeX</span>
+                        <button class="copy-btn" onclick="copyBibtex()">Copy</button>
+                    </div>
+                    <pre class="bibtex-content">@article{dafrallah2021monocular,
+  title   = {Monocular Pedestrian Orientation Recognition Based on Capsule
+             Network for a Novel Collision Warning System},
+  author  = {Dafrallah, Safaa and Amine, Aouatif and Mousset, Stephane
+             and Bensrhair, Abdelaziz},
+  journal = {IEEE Access},
+  volume  = {9},
+  pages   = {141635--141650},
+  year    = {2021},
+  doi     = {10.1109/ACCESS.2021.3119629}
+}</pre>
+                </div>
+            </div>
+        </section>
 
+        <!-- ====== Contact ====== -->
+        <section id="contact" class="section section-alt">
+            <div class="container section-inner">
+                <h2 class="section-title">Contact</h2>
+                <div class="section-rule"></div>
+                <p class="section-text">
+                    For questions, access requests, or collaboration inquiries, please contact:
+                </p>
+                <div class="contact-list">
+                    <a href="mailto:zeinebou.vallkheir@uit.ac.ma" class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        zeinebou.vallkheir@uit.ac.ma
+                    </a>
+                    <a href="mailto:dafrallah.safaa@uit.ac.ma" class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        dafrallah.safaa@uit.ac.ma
+                    </a>
+                    <a href="mailto:aouatif.amine@uit.ac.ma" class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        aouatif.amine@uit.ac.ma
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====== Footer ====== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-supported">
+                <p class="footer-supported-label">Supported by</p>
+                <img src="assets/img/supported_logos.jpg"
+                    alt="Supported by: Ministère de l'Equipement, du Transport et de la Logistique - NARSA - CNRST" />
+            </div>
+            <p class="footer-copy">&copy; 2025 SafeRoad Dataset. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
+
+    <script>
+        function copyBibtex() {
+            const text = document.querySelector('.bibtex-content').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        }
+    </script>
 
 </body>
-<!-- ====== Footer ====== -->
-<footer>
-    <div class="supported-by">
-        <p>Supported by</p>
-        <img src="assets/img/supported_logos.jpg"
-            alt="Supported by: Ministère de l'Equipement, du Transport et de la Logistique - NARSA - Centre National pour la Recherche Scientifique et Technique" />
-    </div>
-    <p>&copy; 2025 ADAS Pedestrian Orientation Dataset. All rights reserved.</p>
-</footer>
-
 </html>
