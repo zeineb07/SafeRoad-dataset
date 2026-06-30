@@ -175,8 +175,12 @@ a:hover {
 
 /* ===== Hero ===== */
 .hero {
-    background: var(--primary);
-    background-image: linear-gradient(135deg, #1e3a5f 0%, #163058 60%, #0f2040 100%);
+    background-color: var(--primary);
+    background-image: url('../img/backg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--white);
     padding: 80px 0 90px;
     position: relative;
@@ -187,9 +191,17 @@ a:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(45,125,210,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(45,125,210,0.1) 0%, transparent 50%);
+    background: linear-gradient(
+        to bottom,
+        rgba(30, 58, 95, 0.75) 0%,
+        rgba(30, 58, 95, 0.85) 100%
+    );
+}
+
+@media (max-width: 720px) {
+    .hero {
+        background-attachment: scroll;
+    }
 }
 
 .hero-inner {
@@ -218,6 +230,7 @@ a:hover {
     line-height: 1.2;
     margin-bottom: 16px;
     color: var(--white);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle {
