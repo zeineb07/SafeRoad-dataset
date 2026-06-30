@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
                 <ul class="nav-list">
                     <li><a class="active" href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
                     <li><a href="#download">Download</a></li>
                     <li><a href="#cite">Citation</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -94,6 +96,117 @@
                 </p>
                 <div class="about-actions">
                     <a href="dataset.html" class="btn btn-primary">Download Dataset</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== Statistics ====== -->
+        <section id="statistics" class="section section-alt">
+            <div class="container section-inner">
+                <h2 class="section-title">Dataset Statistics</h2>
+                <div class="section-rule"></div>
+
+                <!-- 1. Class Gallery -->
+                <h3 class="subsection-title">Orientation Classes</h3>
+                <p class="section-text">Eight pedestrian orientations captured on-board a moving vehicle across Moroccan cities.</p>
+                <div class="class-gallery">
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/front.jpg" alt="Front" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Front</span></div>
+                        </div>
+                        <figcaption>Front</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/back.jpg" alt="Back" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Back</span></div>
+                        </div>
+                        <figcaption>Back</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/left.jpg" alt="Left" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Left</span></div>
+                        </div>
+                        <figcaption>Left</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/right.jpg" alt="Right" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Right</span></div>
+                        </div>
+                        <figcaption>Right</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/left-front.jpg" alt="Left-Front" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Left-Front</span></div>
+                        </div>
+                        <figcaption>Left-Front</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/left-back.jpg" alt="Left-Back" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Left-Back</span></div>
+                        </div>
+                        <figcaption>Left-Back</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/right-front.jpg" alt="Right-Front" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Right-Front</span></div>
+                        </div>
+                        <figcaption>Right-Front</figcaption>
+                    </figure>
+                    <figure class="class-card">
+                        <div class="class-img-wrap">
+                            <img src="assets/img/classes/right-back.jpg" alt="Right-Back" onerror="this.parentNode.classList.add('img-missing')">
+                            <div class="class-img-placeholder"><span>Right-Back</span></div>
+                        </div>
+                        <figcaption>Right-Back</figcaption>
+                    </figure>
+                </div>
+
+                <!-- 2. Distribution Chart -->
+                <h3 class="subsection-title">Instance Distribution per Class</h3>
+                <div class="chart-wrapper">
+                    <canvas id="distributionChart"></canvas>
+                </div>
+
+                <!-- 3. Split Table -->
+                <h3 class="subsection-title">Train / Validation Split</h3>
+                <div class="table-wrapper">
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>Split</th>
+                                <th>Images</th>
+                                <th>Percentage</th>
+                                <th>Bounding Boxes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="split-badge split-train">Train</span></td>
+                                <td>4,508</td>
+                                <td>80%</td>
+                                <td>6,240</td>
+                            </tr>
+                            <tr>
+                                <td><span class="split-badge split-val">Validation</span></td>
+                                <td>1,128</td>
+                                <td>20%</td>
+                                <td>1,560</td>
+                            </tr>
+                            <tr class="table-total">
+                                <td><strong>Total</strong></td>
+                                <td><strong>5,636</strong></td>
+                                <td><strong>100%</strong></td>
+                                <td><strong>7,800</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -211,6 +324,46 @@
     </footer>
 
     <script>
+        new Chart(document.getElementById('distributionChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Back', 'Front', 'Left', 'Right', 'Right-Back', 'Left-Back', 'Left-Front', 'Right-Front'],
+                datasets: [{
+                    label: 'Instances',
+                    data: [2472, 1477, 1146, 1100, 647, 505, 252, 201],
+                    backgroundColor: [
+                        '#1e3a5f', '#2d7dd2', '#3a8fd1', '#4a9fd0',
+                        '#5aaecf', '#6abdce', '#7acbcd', '#8adacc'
+                    ],
+                    borderRadius: 5,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => ` ${ctx.parsed.y.toLocaleString()} instances`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#5a6a7e', font: { family: 'Inter' } },
+                        grid: { color: '#e2e8f0' }
+                    },
+                    x: {
+                        ticks: { color: '#5a6a7e', font: { family: 'Inter' } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
         function copyBibtex() {
             const text = document.querySelector('.bibtex-content').textContent;
             navigator.clipboard.writeText(text).then(() => {
