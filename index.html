@@ -27,6 +27,7 @@
                     <li><a class="active" href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#benchmarks">Benchmarks</a></li>
                     <li><a href="#download">Download</a></li>
                     <li><a href="#cite">Citation</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -208,6 +209,57 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </section>
+
+        <!-- ====== Benchmarks ====== -->
+        <section id="benchmarks" class="section">
+            <div class="container section-inner">
+                <h2 class="section-title">Benchmarks</h2>
+                <div class="section-rule"></div>
+                <p class="section-text">
+                    We evaluated three state-of-the-art detection architectures on the SafeRoad dataset —
+                    a two-stage detector (Faster R-CNN), a real-time single-stage detector (YOLOv8),
+                    and a transformer-based end-to-end model (DETR) — to provide a standardised baseline
+                    for future comparisons.
+                </p>
+                <div class="table-wrapper">
+                    <table class="stats-table bench-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>mAP@0.5 ↑</th>
+                                <th>mAP@0.5:0.95 ↑</th>
+                                <th>Precision ↑</th>
+                                <th>Recall ↑</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="model-name">Faster R-CNN</td>
+                                <td class="best">80.73%</td>
+                                <td class="best">58.50%</td>
+                                <td class="best">80.73%</td>
+                                <td>70.63%</td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">YOLOv8</td>
+                                <td>78.30%</td>
+                                <td>52.60%</td>
+                                <td>77.70%</td>
+                                <td class="best">76.20%</td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">DETR</td>
+                                <td>67.40%</td>
+                                <td>46.90%</td>
+                                <td class="na">—</td>
+                                <td>66.70%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="bench-note">↑ Higher is better. Best result per metric highlighted in each column.</p>
             </div>
         </section>
 

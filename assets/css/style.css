@@ -696,6 +696,43 @@ a:hover {
     color: var(--accent);
 }
 
+/* ===== Benchmarks ===== */
+
+.bench-table {
+    min-width: 560px;
+}
+
+.bench-table .model-name {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.bench-table td.best {
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(45,125,210,0.07);
+    position: relative;
+}
+
+.bench-table td.best::after {
+    content: '★';
+    font-size: 0.6rem;
+    vertical-align: super;
+    margin-left: 3px;
+    opacity: 0.6;
+}
+
+.bench-table td.na {
+    color: var(--text-light);
+    text-align: center;
+}
+
+.bench-note {
+    margin-top: 12px;
+    font-size: 0.78rem;
+    color: var(--text-light);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 720px) {
     .hero-title {
