@@ -363,6 +363,48 @@
 
     </main>
 
+    <!-- ====== License & Version ====== -->
+    <section id="license" class="section">
+        <div class="container section-inner">
+            <h2 class="section-title">License &amp; Version</h2>
+            <div class="section-rule"></div>
+            <div class="license-grid">
+
+                <div class="license-block">
+                    <h3 class="license-heading">License</h3>
+                    <div class="license-cc">
+                        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener license">
+                            <img src="https://licensebuttons.net/l/by-nc/4.0/88x31.png"
+                                 alt="Creative Commons Attribution-NonCommercial 4.0 International License badge"
+                                 width="88" height="31">
+                        </a>
+                        <p class="license-text">
+                            This dataset is released under the
+                            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener license">
+                                Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)
+                            </a>.
+                            You are free to share and adapt the material provided appropriate credit is given
+                            and it is not used for commercial purposes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="version-block">
+                    <h3 class="license-heading">Current Version</h3>
+                    <div class="version-card">
+                        <span class="version-tag">v1.0</span>
+                        <dl class="version-meta">
+                            <dt>Release date</dt>
+                            <dd>June 30, 2026</dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+            <p class="academic-note">For academic and research use only.</p>
+        </div>
+    </section>
+
     <!-- ====== Footer ====== -->
     <footer class="site-footer">
         <div class="container footer-inner">
@@ -371,11 +413,13 @@
                 <img src="assets/img/supported_logos.jpg"
                     alt="Supported by: Ministère de l'Equipement, du Transport et de la Logistique - NARSA - CNRST" />
             </div>
-            <p class="footer-copy">&copy; 2025 SafeRoad Dataset. All rights reserved.</p>
+            <p class="footer-copy">&copy; <span id="footer-year"></span> SafeRoad Dataset. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
         new Chart(document.getElementById('distributionChart'), {
             type: 'bar',
             data: {
